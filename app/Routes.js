@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router';
 import App from './containers/App';
-import Home from './containers/Home';
-import User from './containers/User';
 import NoMatch from './containers/NoMatch';
+import universal from 'react-universal-component'
+
+const Home = universal(props => import(`./containers/Home`));
+const User = universal(props => import(`./containers/User`));
 
 export default (
   <Route component={App}>
